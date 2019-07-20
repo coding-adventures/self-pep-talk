@@ -1,0 +1,4 @@
+app-env
+env/
+*.pyc
+.DS_Store
