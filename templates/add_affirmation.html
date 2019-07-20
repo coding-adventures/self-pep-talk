@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<h1>Positive affirmations to brighten up your day.</h1>
+
+<body>
+  <p>Please enter a positive message you would like to save:</p>
+
+  <form action="/message" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="affirmation" class="white-text" width=500>Your affirmation</label><br/>
+        <input type="text" id="affirmation" name="user_affirmation" placeholder="I am a wonderful miracle!!!"><br/>
+        <label for="sdate" width=500>The date you'd like to receive this message</label>
+        <input type="date" id="sdate" name="scheduled_date"><br/>
+        Select a time you'd like to receive this message:
+        <input type="time" id="stime" name="scheduled_time">
+
+      </div>
+    </div>
+  <button type="submit" class="btn btn-primary" onclick="updateMessage()">Save your affirmation</button>
+
+  <br/>
+  <p id="entered">You entered the affirmation:</p>
+  <p id="affconf">Nothing so far!</p>
+
+  </form>
+
+<script>
+  // note that this will always refresh since we are not rerouting correctly
+
+  function updateMessage() {
+    document.getElementById("affconf").innerHTML = document.getElementById("affirmation").value;
+  }
+</script>
+
+
+</body>
+
+</html>
